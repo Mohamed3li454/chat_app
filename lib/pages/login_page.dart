@@ -39,21 +39,21 @@ class login_page extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const textfail_widget(
+            textfail_widget(
               label: "Enter Your Email",
               hinttext: "Email",
             ),
             const SizedBox(
               height: 10,
             ),
-            const textfail_widget(
+            textfail_widget(
               label: "Enter Your Password",
               hinttext: "Password",
             ),
             const SizedBox(
               height: 10,
             ),
-            const custom_button(text: "Login"),
+            custom_button(text: "Login"),
             const SizedBox(
               height: 15,
             ),

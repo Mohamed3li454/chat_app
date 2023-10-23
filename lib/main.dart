@@ -1,8 +1,14 @@
+import 'package:chat_app/firebase_options.dart';
 import 'package:chat_app/pages/login_page.dart';
 import 'package:chat_app/pages/register_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const chat_app());
 }
 
@@ -14,7 +20,7 @@ class chat_app extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "registerpage": (context) => const register_page(),
+        "registerpage": (context) => register_page(),
         "login_page": (context) => const login_page()
       },
       initialRoute: "login_page",
