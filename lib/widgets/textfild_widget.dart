@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 
 // ignore: camel_case_types, must_be_immutable
 class textfail_widget extends StatelessWidget {
-  textfail_widget({super.key, this.hinttext, this.label, this.onchanged});
+  textfail_widget(
+      {super.key,
+      this.hinttext,
+      this.label,
+      this.onchanged,
+      this.obscure = false});
   String? hinttext;
   String? label;
+  bool? obscure;
   Function(String)? onchanged;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      // ignore: body_might_complete_normally_nullable
+      obscureText: obscure!,
       validator: (data) {
         if (data!.isEmpty) {
           return "faild is requierd";

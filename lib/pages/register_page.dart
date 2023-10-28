@@ -1,3 +1,4 @@
+import 'package:chat_app/helper/snack_bar.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/textfild_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -72,6 +73,7 @@ class _register_pageState extends State<register_page> {
                   height: 10,
                 ),
                 textfail_widget(
+                  obscure: true,
                   onchanged: (data) {
                     password = data;
                   },
@@ -90,16 +92,16 @@ class _register_pageState extends State<register_page> {
                       try {
                         await registerUser();
                         // ignore: use_build_context_synchronously
-                        showsnackbar(context, 'successfuly');
+                        Navigator.pushNamed(context, "login_page");
                       } on FirebaseAuthException catch (e) {
-                        if (e.code == 'weak-password') {
+                        if (e.code == 'user-not-found') {
                           // ignore: use_build_context_synchronously
                           showsnackbar(
-                              context, "The password provided is too weak.");
-                        } else if (e.code == 'email-already-in-use') {
+                              context, "No user found for that email.");
+                        } else if (e.code == 'wrong-password') {
                           // ignore: use_build_context_synchronously
                           showsnackbar(context,
-                              'The account already exists for that email.');
+                              'Wrong password provided for that user.');
                         }
                       }
                       isloading = false;
@@ -130,14 +132,6 @@ class _register_pageState extends State<register_page> {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  void showsnackbar(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
       ),
     );
   }
