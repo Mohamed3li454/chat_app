@@ -1,5 +1,6 @@
 import 'package:chat_app/firebase_options.dart';
 import 'package:chat_app/pages/chat_page.dart';
+import 'package:chat_app/pages/home_page.dart';
 import 'package:chat_app/pages/login_page.dart';
 import 'package:chat_app/pages/register_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -20,12 +21,14 @@ class chat_app extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       routes: {
         "registerpage": (context) => register_page(),
         "login_page": (context) => const login_page(),
-        "chat_page": (context) => chat_page()
+        "chat_page": (context) => chat_page(),
+        "home_page": (context) => HomePage(),
       },
-      initialRoute: "login_page",
+      initialRoute: "home_page",
     );
   }
 }
