@@ -1,8 +1,10 @@
 import 'package:chat_app/helper/snack_bar.dart';
+import 'package:chat_app/helper/socal_sign_up.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/textfild_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 // ignore: camel_case_types
@@ -28,24 +30,32 @@ class _login_pageState extends State<login_page> {
     return ModalProgressHUD(
       inAsyncCall: isloading,
       child: Scaffold(
-        backgroundColor: Colors.cyan,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          child: Form(
-            key: formkey,
-            child: Column(
+        body: Form(
+          key: formkey,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            // decoration: const BoxDecoration(
+            //   gradient: LinearGradient(colors: [
+            //     Color.fromARGB(195, 0, 0, 0),
+            //     kprimerycolor,
+            //     Colors.grey
+            //   ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+            // ),
+            child: ListView(
               children: [
-                const Spacer(
-                  flex: 2,
+                const SizedBox(height: 75),
+                SvgPicture.asset("assets/icons/signup.svg", height: 250),
+                const SizedBox(height: 20),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Cool Chat",
+                      style: TextStyle(fontFamily: "Pacifico", fontSize: 32),
+                    ),
+                  ],
                 ),
-                Image.asset("assets/images/unnamed.png", height: 190),
-                const Text(
-                  "Cool Chat",
-                  style: TextStyle(fontFamily: "Pacifico", fontSize: 32),
-                ),
-                const Spacer(
-                  flex: 2,
-                ),
+                const SizedBox(height: 50),
                 const Row(
                   children: [
                     Padding(
@@ -126,9 +136,8 @@ class _login_pageState extends State<login_page> {
                     ),
                   ],
                 ),
-                const Spacer(
-                  flex: 3,
-                )
+                const SocalSignUp(),
+                const SizedBox(height: 75),
               ],
             ),
           ),

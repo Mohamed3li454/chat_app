@@ -100,7 +100,7 @@ class chat_page extends StatelessWidget {
               ),
             );
           } else {
-            return Text("Loading...");
+            return const Text("Loading...");
           }
         });
   }

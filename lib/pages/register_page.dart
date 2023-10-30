@@ -1,4 +1,6 @@
+import 'package:chat_app/helper/consts.dart';
 import 'package:chat_app/helper/snack_bar.dart';
+import 'package:chat_app/helper/socal_sign_up.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/textfild_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -30,10 +32,16 @@ class _register_pageState extends State<register_page> {
       inAsyncCall: isloading,
       child: Scaffold(
         backgroundColor: Colors.cyan,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          child: Form(
-            key: formkey,
+        body: Form(
+          key: formkey,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Colors.black, kprimerycolor, Colors.grey],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter),
+            ),
             child: ListView(
               children: [
                 const SizedBox(height: 75),
@@ -127,6 +135,7 @@ class _register_pageState extends State<register_page> {
                     ),
                   ],
                 ),
+                const SocalSignUp(),
                 const SizedBox(height: 75),
               ],
             ),

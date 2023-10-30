@@ -1,4 +1,5 @@
 // ignore: camel_case_types
+import 'package:chat_app/helper/consts.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types, must_be_immutable
@@ -13,7 +14,7 @@ class custom_button extends StatelessWidget {
       onTap: ontap,
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15), color: Colors.white),
+            borderRadius: BorderRadius.circular(15), color: kprimerycolor),
         height: 60,
         width: double.infinity,
         child: Center(
