@@ -13,24 +13,27 @@ class User {
 final User currentUser =
     User(id: 0, name: 'You', avatar: 'assets/images/Addison.jpg');
 
-final User addison =
-    User(id: 1, name: 'Addison', avatar: 'assets/images/Addison.jpg');
+final User CoolChat =
+    User(id: 1, name: 'Cool Chat', avatar: 'assets/images/unnamed.png');
 
-final User angel =
+final User Angel =
     User(id: 2, name: 'Angel', avatar: 'assets/images/Angel.jpg');
 
-final User deanna =
-    User(id: 3, name: 'Deanna', avatar: 'assets/images/Deanna.jpg');
+final User James =
+    User(id: 3, name: 'James', avatar: 'assets/images/images.png');
 
-final User jason = User(id: 4, name: 'Json', avatar: 'assets/images/Jason.jpg');
+final User jason = User(
+    id: 4,
+    name: 'Json',
+    avatar:
+        'assets/images/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg');
 
 final User judd = User(id: 5, name: 'Judd', avatar: 'assets/images/Judd.jpg');
 
 final User leslie =
     User(id: 6, name: 'Leslie', avatar: 'assets/images/Leslie.jpg');
 
-final User nathan =
-    User(id: 7, name: 'Nathan', avatar: 'assets/images/Nathan.jpg');
+final User Mat = User(id: 7, name: 'Mat', avatar: 'assets/images/4511668.png');
 
 final User stanley =
     User(id: 8, name: 'Stanley', avatar: 'assets/images/Stanley.jpg');

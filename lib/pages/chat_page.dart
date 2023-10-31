@@ -1,4 +1,5 @@
 import 'package:chat_app/helper/consts.dart';
+import 'package:chat_app/models/app_theme.dart';
 import 'package:chat_app/models/message_model.dart';
 import 'package:chat_app/widgets/bubble_chat.dart';
 import 'package:flutter/material.dart';
@@ -29,74 +30,113 @@ class chat_page extends StatelessWidget {
             }
             return Scaffold(
               appBar: AppBar(
-                backgroundColor: Colors.transparent,
+                toolbarHeight: 100,
+                centerTitle: false,
+                backgroundColor: kprimerycolor,
                 elevation: 0,
-                automaticallyImplyLeading: false,
+                // automaticallyImplyLeading: false,
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Image.asset(
-                      "assets/images/unnamed.png",
-                      height: 60,
+                    CircleAvatar(
+                      radius: 30,
+                      child: Image.asset(
+                        "assets/images/4511668.png",
+                      ),
                     ),
-                    const Text(
-                      "",
-                      style: TextStyle(color: Colors.black, fontSize: 30),
-                    )
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Mat",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            // letterSpacing: 1.5,
+                          ),
+                        ),
+                        Text(
+                          "Online",
+                          style: MyTheme.bodyText1
+                              .copyWith(fontSize: 15, color: Colors.red),
+                        )
+                      ],
+                    ),
+                    Spacer(),
+                    Icon(Icons.call, size: 30),
                   ],
                 ),
               ),
-              body: Column(
-                children: [
-                  Expanded(
-                    child: ListView.builder(
-                      reverse: true,
-                      controller: _scrollcontroller,
-                      itemCount: messagelist.length,
-                      itemBuilder: (context, index) {
-                        return messagelist[index].id == email
-                            ? bubble_chat(
-                                message: messagelist[index],
-                              )
-                            : bubble_chat_frind(message: messagelist[index]);
-                      },
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: TextField(
-                      controller: controller,
-                      onSubmitted: (data) {
-                        message.add({
-                          "message": data,
-                          "createdat": DateTime.now(),
-                          "id": email,
-                        });
-                        controller.clear();
-                        _scrollcontroller.animateTo(
-                          0,
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.easeIn,
-                        );
-                      },
-                      decoration: InputDecoration(
-                        label: const Text("Send Message"),
-                        suffixIcon: const Icon(
-                          Icons.send,
-                          color: kprimerycolor,
-                        ),
-                        border: OutlineInputBorder(
-                          borderSide: const BorderSide(color: kprimerycolor),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: kprimerycolor),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
+              backgroundColor: kprimerycolor,
+              body: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30))),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: ListView.builder(
+                        reverse: true,
+                        controller: _scrollcontroller,
+                        itemCount: messagelist.length,
+                        itemBuilder: (context, index) {
+                          return messagelist[index].id == email
+                              ? bubble_chat(
+                                  message: messagelist[index],
+                                )
+                              : bubble_chat_frind(message: messagelist[index]);
+                        },
                       ),
                     ),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: TextField(
+                        controller: controller,
+                        onSubmitted: (data) {
+                          message.add({
+                            "message": data,
+                            "createdat": DateTime.now(),
+                            "id": email,
+                          });
+                          controller.clear();
+                          _scrollcontroller.animateTo(
+                            0,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeIn,
+                          );
+                        },
+                        decoration: InputDecoration(
+                          iconColor: kprimerycolor,
+                          icon: Transform.rotate(
+                              angle: 3.15,
+                              child: Icon(
+                                Icons.send,
+                              )),
+                          prefixIcon: Icon(Icons.emoji_emotions_outlined),
+                          label: const Text("Send Message"),
+                          suffixIcon: const Icon(
+                            Icons.attach_file_outlined,
+                            color: kprimerycolor,
+                          ),
+                          border: OutlineInputBorder(
+                            borderSide: const BorderSide(color: kprimerycolor),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(color: kprimerycolor),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             );
           } else {

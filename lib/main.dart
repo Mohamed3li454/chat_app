@@ -28,7 +28,7 @@ class chat_app extends StatelessWidget {
         "chat_page": (context) => chat_page(),
         "home_page": (context) => HomePage(),
       },
-      initialRoute: "home_page",
+      initialRoute: "login_page",
     );
   }
 }

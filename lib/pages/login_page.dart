@@ -100,7 +100,7 @@ class _login_pageState extends State<login_page> {
                       try {
                         await loginUser();
                         // ignore: use_build_context_synchronously
-                        Navigator.pushNamed(context, "chat_page",
+                        Navigator.pushNamed(context, "home_page",
                             arguments: email);
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'weak-password') {

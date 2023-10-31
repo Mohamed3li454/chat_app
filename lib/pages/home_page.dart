@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         title: const Center(
           child: Text(
             'Cool Chat',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.black, fontFamily: "Pacifico"),
           ),
         ),
         actions: [
@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         child: Row(
                           children: [
                             Text(
-                              "Recent Chat",
+                              "Searching in Chats",
                               style: MyTheme.heading2,
                             ),
                             Spacer(),
@@ -84,56 +84,62 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         itemCount: recentChats.length,
                         itemBuilder: (context, index) {
                           final recentchat = recentChats[index];
-                          return Container(
-                            margin: EdgeInsets.only(top: 20),
-                            child: Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: 26,
-                                  backgroundImage:
-                                      AssetImage(recentchat.avatar!),
-                                ),
-                                SizedBox(width: 20),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      recentchat.sender!.name!,
-                                      style: MyTheme.heading2
-                                          .copyWith(fontSize: 20),
-                                    ),
-                                    Text(
-                                      recentchat.text!,
-                                      style: MyTheme.bodyText1,
-                                    ),
-                                  ],
-                                ),
-                                Spacer(),
-                                Column(
-                                  children: [
-                                    CircleAvatar(
-                                      radius: 7,
-                                      backgroundColor: MyTheme.kUnreadChatBG,
-                                      child: Text(
-                                        recentchat.unreadCount.toString(),
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.bold),
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(context, 'chat_page');
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(top: 20),
+                              child: Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 26,
+                                    backgroundImage:
+                                        AssetImage(recentchat.avatar!),
+                                  ),
+                                  SizedBox(width: 20),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        recentchat.sender!.name!,
+                                        style: MyTheme.heading2
+                                            .copyWith(fontSize: 20),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Text(
-                                      recentchat.time!,
-                                      style: MyTheme.bodyTextTime,
-                                    )
-                                  ],
-                                ),
-                              ],
+                                      Text(
+                                        recentchat.text!,
+                                        style: MyTheme.bodyText1,
+                                      ),
+                                    ],
+                                  ),
+                                  Spacer(),
+                                  Column(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 7,
+                                        backgroundColor: MyTheme.kUnreadChatBG,
+                                        child: Text(
+                                          recentchat.unreadCount.toString(),
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        recentchat.time!,
+                                        style: MyTheme.bodyTextTime,
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           );
                         },

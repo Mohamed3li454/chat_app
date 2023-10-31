@@ -37,10 +37,7 @@ class _register_pageState extends State<register_page> {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [Colors.black, kprimerycolor, Colors.grey],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter),
+              color: Colors.white,
             ),
             child: ListView(
               children: [
@@ -74,7 +71,7 @@ class _register_pageState extends State<register_page> {
                   onchanged: (data) {
                     email = data;
                   },
-                  label: "Enter Your Email",
+                  label: "Enter Email",
                   hinttext: "Email",
                 ),
                 const SizedBox(
@@ -85,7 +82,7 @@ class _register_pageState extends State<register_page> {
                   onchanged: (data) {
                     password = data;
                   },
-                  label: "Enter Your Password",
+                  label: "Enter Password",
                   hinttext: "Password",
                 ),
                 const SizedBox(

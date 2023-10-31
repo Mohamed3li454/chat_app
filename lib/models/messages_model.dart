@@ -20,31 +20,31 @@ class Message {
 
 final List<Message> recentChats = [
   Message(
-    sender: addison,
-    avatar: 'assets/images/Addison.jpg',
+    sender: CoolChat,
+    avatar: 'assets/images/unnamed.png',
     time: '01:25',
-    text: "typing...",
+    text: "How can i hellp you ☺️ ?",
     unreadCount: 1,
   ),
   Message(
     sender: jason,
-    avatar: 'assets/images/Jason.jpg',
+    avatar: 'assets/images/Avatar-Profile-Vector-PNG-Cutout.png',
     time: '12:46',
-    text: "Will I be in it?",
+    text: "Let me see what I can do.",
     unreadCount: 1,
   ),
   Message(
-    sender: deanna,
-    avatar: 'assets/images/Deanna.jpg',
+    sender: James,
+    avatar: 'assets/images/images.png',
     time: '05:26',
-    text: "That's so cute.",
+    text: "Thanks for denner",
     unreadCount: 3,
   ),
   Message(
-      sender: nathan,
-      avatar: 'assets/images/Nathan.jpg',
+      sender: Mat,
+      avatar: 'assets/images/4511668.png',
       time: '12:45',
-      text: "Let me see what I can do.",
+      text: "Where're You ?",
       unreadCount: 2),
 ];
 
@@ -85,9 +85,9 @@ final List<Message> allChats = [
 
 final List<Message> messages = [
   Message(
-    sender: addison,
+    sender: CoolChat,
     time: '12:09 AM',
-    avatar: addison.avatar,
+    avatar: CoolChat.avatar,
     text: "...",
   ),
   Message(
@@ -103,15 +103,15 @@ final List<Message> messages = [
     text: "See, I was right, this doesn’t interest me.",
   ),
   Message(
-    sender: addison,
+    sender: CoolChat,
     time: '11:58 PM',
-    avatar: addison.avatar,
+    avatar: CoolChat.avatar,
     text: "I sign your paychecks.",
   ),
   Message(
-    sender: addison,
+    sender: CoolChat,
     time: '11:58 PM',
-    avatar: addison.avatar,
+    avatar: CoolChat.avatar,
     text: "You think we have nothing to talk about?",
   ),
   Message(
@@ -122,9 +122,9 @@ final List<Message> messages = [
         "Well, because I had no intention of being in your office. 20 minutes ago",
   ),
   Message(
-    sender: addison,
+    sender: CoolChat,
     time: '11:30 PM',
-    avatar: addison.avatar,
+    avatar: CoolChat.avatar,
     text: "I was expecting you in my office 20 minutes ago.",
   ),
 ];
