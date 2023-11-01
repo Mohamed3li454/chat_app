@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class MyTheme {
   MyTheme._();
-  static Color kPrimaryColor = Color(0xff7C7B9B);
-  static Color kPrimaryColorVariant = Color(0xff686795);
+  static Color kPrimaryColor = const Color(0xff7C7B9B);
+  static Color kPrimaryColorVariant = const Color(0xff686795);
   static Color kAccentColor = Colors.black;
-  static Color kAccentColorVariant = Color(0xffF7A3A2);
-  static Color kUnreadChatBG = Color(0xffEE1D1D);
+  static Color kAccentColorVariant = const Color(0xffF7A3A2);
+  static Color kUnreadChatBG = const Color(0xffEE1D1D);
 
   static final TextStyle kAppTitle = MyTheme.bodyText1;
 

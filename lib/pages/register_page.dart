@@ -1,4 +1,3 @@
-import 'package:chat_app/helper/consts.dart';
 import 'package:chat_app/helper/snack_bar.dart';
 import 'package:chat_app/helper/socal_sign_up.dart';
 import 'package:chat_app/widgets/custom_button.dart';
